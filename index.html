@@ -136,24 +136,23 @@
                 Zero-Shot TTS (LibriSpeech)
               </h2>
               <p>
-                Through in-context learning, DiTTo-TTS produces speech using a
+                Through in-context learning, ResGen produces speech using a
                 reference audio and its corresponding text. We represent
                 <span style="color: #8fbddf; font-weight: bold"
                   >the prompt in blue</span
                 >, and
                 <span style="color: #9fde83; font-weight: bold"
                   >the generated audio in green</span
-                >. The resulting speech closely resembles the reference in
-                voice, background noise, and speaking style. When dividing
+                >. When dividing
                 prompts into 3-second segments, the audio boundaries may not
                 always end in silence and could sometimes cut off words midway.
-                For further details, please see <b>English-only Evaluation</b> part in <b>Section 5.1</b> of our paper.
                 When you click on "Show baselines", you can see the ground truth
-                and baseline audio, etc. YourTTS, Vall-E, and CLaM-TTS audios are brought
+                and baseline audio, etc. YourTTS, Vall-E, CLaM-TTS, and DiTTo-TTS audios are brought
                 from YourTTS demo<sup><a href="#footnote1-1">1</a></sup>,
                  Vall-E demo<sup><a href="#footnote1-2">2</a></sup
-                >, and CLaM-TTS demo<sup><a href="#footnote1-3">3</a></sup
-                  > respectively.
+                >, CLaM-TTS demo<sup><a href="#footnote1-3">3</a></sup
+                  >, and DiTTo-TTS demo<sup><a href="#footnote1-4">4</a></sup
+                    > respectively.
               </p>
             </div>
             <div
@@ -163,18 +162,17 @@
             >
               <h2 id="celeb" style="text-align: center">Celebrities</h2>
               <p>
-                DiTTo-TTS is capable of replicating the voices and speech styles of well-known personalities.
+                ResGen is capable of replicating the voices and speech styles of well-known personalities.
                 We represent
                 <span style="color: #8fbddf; font-weight: bold"
                   >the prompt in blue</span
                 >, and
                 <span style="color: #9fde83; font-weight: bold"
                   >the generated audio in green</span
-                >. The resulting speech closely resembles the reference in
-                voice, background noise, and speaking style. When you click on
+                >. When you click on
                 "Show baselines", you can see the ground truth and baseline
-                audio, etc. Texts corresponding to the generated audio and CLaM-TTS audios are brought from
-                CLaM-TTS demo<sup><a href="#footnote3-1">1</a></sup>.
+                audio, etc. Texts corresponding to the generated audio, CLaM-TTS and DiTTo-TTS audios are brought from
+                CLaM-TTS demo<sup><a href="#footnote3-1">1</a></sup> and DiTTo-TTS demo<sup><a href="#footnote3-2">2</a></sup>.
               </p>
             </div>
             <div
@@ -184,22 +182,22 @@
             >
               <h2 id="anime" style="text-align: center">Anime Characters</h2>
               <p>
-                DiTTo-TTS is capable of replicating the voices and speech styles of well-known anime characters.
+                ResGen is capable of replicating the voices and speech styles of well-known anime characters.
                 We represent
                 <span style="color: #8fbddf; font-weight: bold"
                   >the prompt in blue</span
                 >, and
                 <span style="color: #9fde83; font-weight: bold"
                   >the generated audio in green</span
-                >. The resulting speech closely resembles the reference in
-                voice, background noise, and speaking style. When you click on
+                >. When you click on
                 "Show baselines", you can see the ground truth and baseline
-                audio, etc. Texts corresponding to the generated audio and Mega-TTS audios are brought from
-                Mega-TTS demo<sup><a href="#footnote4-1">1</a></sup>.
+                audio, etc. Texts corresponding to the generated audio, Mega-TTS, CLaM-TTS, and DiTTo-TTS audios are brought from
+                Mega-TTS demo<sup><a href="#footnote4-1">1</a></sup>, CLaM-TTS demo<sup><a href="#footnote4-2">2</a></sup>, and DiTTo-TTS demo<sup><a href="#footnote4-3">3</a></sup>.
               </p>
             </div>
           </div>
         </article>
+        <span>* This demo page was largely created by referencing and adapting the code from the DiTTo-TTS demo page (<a href="https://ditto-tts.github.io/">https://ditto-tts.github.io/</a>).</span>
       </main>
     </div>
     <template id="prompt-template">

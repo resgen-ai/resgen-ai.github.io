@@ -182,11 +182,15 @@ function divBuilderLibriSpeech(id, data) {
     '<sup id="footnote1-2">2</sup><a href="https://www.microsoft.com/en-us/research/project/vall-e-x/vall-e/">https://www.microsoft.com/en-us/research/project/vall-e-x/vall-e/</a><br>';
   const footnote3 = document.createElement("span");
   footnote3.innerHTML =
-    '<sup id="footnote1-3">3</sup><a href="https://clam-tts.github.io/">https://clam-tts.github.io/</a>';
+    '<sup id="footnote1-3">3</sup><a href="https://clam-tts.github.io/">https://clam-tts.github.io/</a><br>';
+  const footnote4 = document.createElement("span");
+  footnote4.innerHTML =
+    '<sup id="footnote1-4">4</sup><a href="https://ditto-tts.github.io/">https://ditto-tts.github.io/</a>';
 
   fragment.appendChild(footnote1);
   fragment.appendChild(footnote2);
   fragment.appendChild(footnote3);
+  fragment.appendChild(footnote4);
 
   const root = document.querySelector(id);
   root.appendChild(fragment);
@@ -294,9 +298,13 @@ function divBuilderCeleb(id, data) {
   const fragment = document.createDocumentFragment();
   const footnote1 = document.createElement("span");
   footnote1.innerHTML =
-    '<sup id="footnote3-1">1</sup><a href="https://clam-tts.github.io/">https://clam-tts.github.io/</a>';
+    '<sup id="footnote3-1">1</sup><a href="https://clam-tts.github.io/">https://clam-tts.github.io/</a><br>';
+  const footnote2 = document.createElement("span");
+  footnote2.innerHTML =
+    '<sup id="footnote3-2">2</sup><a href="https://ditto-tts.github.io/">https://ditto-tts.github.io/</a>';
 
   fragment.appendChild(footnote1);
+  fragment.appendChild(footnote2);
 
   const root = document.querySelector(id);
   root.appendChild(fragment);
@@ -324,9 +332,17 @@ function divBuilderAnime(id, data) {
   const fragment = document.createDocumentFragment();
   const footnote1 = document.createElement("span");
   footnote1.innerHTML =
-    '<sup id="footnote4-1">1</sup><a href="https://boostprompt.github.io/boostprompt/">https://boostprompt.github.io/boostprompt/</a>';
+    '<sup id="footnote4-1">1</sup><a href="https://boostprompt.github.io/boostprompt/">https://boostprompt.github.io/boostprompt/</a><br>';
+  const footnote2 = document.createElement("span");
+  footnote2.innerHTML =
+    '<sup id="footnote4-2">2</sup><a href="https://clam-tts.github.io/">https://clam-tts.github.io/</a><br>';
+  const footnote3 = document.createElement("span");
+  footnote3.innerHTML =
+    '<sup id="footnote4-3">3</sup><a href="https://ditto-tts.github.io/">https://ditto-tts.github.io/</a>';
 
   fragment.appendChild(footnote1);
+  fragment.appendChild(footnote2);
+  fragment.appendChild(footnote3);
 
   const root = document.querySelector(id);
   root.appendChild(fragment);
