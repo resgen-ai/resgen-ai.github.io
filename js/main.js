@@ -142,6 +142,10 @@ function divBuilderLibriSpeech(id, data) {
       "src",
       data["path_template_list"][i].replace("{}", "clam"),
     );
+    sampleAudioList[6].setAttribute(
+      "src",
+      data["path_template_list"][i].replace("{}", "ditto"),
+    );
 
     const card = copiedNode.querySelectorAll(".ditto-sample-box table tr")
     card.forEach((elm, idx) => {
@@ -243,6 +247,10 @@ function divBuilder(id, data) {
     sampleAudioList[5].setAttribute(
       "src",
       data["path_template_list"][i].replace("{}", "megatts"),
+    );
+    sampleAudioList[6].setAttribute(
+      "src",
+      data["path_template_list"][i].replace("{}", "ditto"),
     );
 
     // inject functions
