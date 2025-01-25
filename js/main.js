@@ -271,38 +271,6 @@ function divBuilder(id, data) {
   root.appendChild(fragment);
 }
 
-function divBuilderMLS(id, data) {
-  divBuilder(id, data);
-
-  const cards = document.querySelectorAll(id + " .ditto-card");
-  for (let i = 0; i < data["text_list"].length; i++) {
-    cards[i].querySelector("div:nth-child(1)").innerHTML =
-      "<p><strong>Prompt + Text (" +
-      data["lang_list"][i] +
-      ")</strong>: " +
-      data["text_list"][i] +
-      "</p>";
-
-    cards[i]
-      .querySelectorAll(".ditto-sample-box table tr")
-      .forEach((elm, idx) => {
-        elm.removeChild(elm.children[5]);
-        elm.removeChild(elm.children[3]);
-        elm.removeChild(elm.children[2]);
-      });
-  }
-
-  const fragment = document.createDocumentFragment();
-  const footnote1 = document.createElement("span");
-  footnote1.innerHTML =
-    '<sup id="footnote2-1">1</sup><a href="https://clam-tts.github.io/">https://clam-tts.github.io/</a>';
-
-  fragment.appendChild(footnote1);
-
-  const root = document.querySelector(id);
-  root.appendChild(fragment);
-}
-
 function divBuilderCeleb(id, data) {
   divBuilder(id, data);
 
@@ -400,72 +368,6 @@ const librispeechData = {
   prompt_time: Array(8).fill(3),
 };
 
-const mlsData = {
-  text_list: [
-    "o god our hands are few and faint our hope rests all with thee lend us thy hand in this sore strait and thine the glory be",
-    "angelica broke in in her energetic way if you're going to be a duke i won't be left plain miss hamilton wells you couldn't be plain miss anything",
-    "같은 시간 에프조의 멕시코와 스웨덴 역시 조별리그 삼차전을 치른다.",
-    "실현할 기회를 얻지 못하다 미국의 전기회사를 방문해 계획을 말했습니다.",
-    "und grinst nun erst beginnt die praktische übung bin ich nicht schon allzu erschöpft durch das theoretische wohl allzu erschöpft das gehört zu meinem schicksal trotzdem greife ich so gut ich kann nach der hingereichten flasche",
-    "wenn nicht mr osborne ein bescheidener fußgänger gewesen wäre noch ist der beifall in der luft da lösen ihn plötzlich andere töne ab der marquis von blandford",
-    "en toen jammerde het ook in het schrijfboek van hjalmar o dat was vreselijk om aan te horen op iedere bladzijde stonden van boven naar beneden de grote letters en naast iedere grote letter stond een kleine dat was het voorbeeld",
-    "neen niet op de achterste rij ook niet naast jantje kroeze dat gaat geen twee dagen goed vooraan dan maar nee die bank is te klein voor hem en daar zit hij ook de kleinere jongens achter hem in de weg",
-    "au lieu de répondre à ces questions le jeune homme se mit à pleurer amèrement que la fortune est inconstante s'écria-t-il elle se plaît à abaisser les hommes qu'elle a élevés",
-    "et de se savoir ainsi chantée par un poète cela lui fit oublier toute modestie elle allongea son cou derrière ses feuilles tourna vaniteusement sa tête à gauche et à droite et se mira avec complaisance dans une grosse goutte de rosée qui était restée pendue à un brin d'herbe",
-    "lo quise decir a vuestra merced es que es fama en este pueblo que no hay gente más mala que las placeras porque todas son desvergonzadas desalmadas y atrevidas y yo así lo creo por las que he visto en otros pueblos",
-    "en otro cajón el valor de treinta y seis libras esterlinas en moneda de europa y del brasil parte en oro parte en plata y entre otras algunas piezas de a ocho a la vista de aquel dinero me sonreí sardónicamente metal miserable exclamé de qué puedes servirme",
-    "molto impensierito della diffusione del malcostume per opera della stampa quotidiana proibisce alla moglie e alla figliuola la lettura dei giornali la piccola medea è stata educata secondo le rigide massime di condotta che a lui",
-    "però disse il maestro se tu tronchi qualche fraschetta d'una d'este piante e pensier c'hai si faran tutti monchi",
-    "o homem ao destacar-se do último elo da cadeia dos seres sentiu-se forte e senhor da terra a natureza oferecia-lhe por toda a parte seus peitos uberantes e este regozijo de harmonia ligava a sua existência a vida panteística do universo",
-    "a influência manifesta do cristianismo é a comuna o abraço dos povos pelo trabalho do comércio e da indústria eis o segredo das riquezas de pisa grand veneza genova bruges e florença ao pé da barbárie dos estados feudais",
-    "choćby nawet z kamyków ułożony niema dla niego żadnej wagi bo gatunkowo nie jest ani cięższym ani lżejszym od wody gdyby było inaczej to jest gdyby był cięższym męczyłby bezpotrzebnie właściciela w przeciwnym zaś razie unosiłby go łatwo w górę i utrudniał pełzanie po dnie",
-    "nie mają one zupełnie zwierzchników jeśli w ulu matka pszczół jest tylko matką ale nie królową jak to niektórzy badacze mylnie twierdzili to tem bardziej w mrowisku nie może być mowy o królowych gdzie matek jest zwykle kilka przy jednowładztwie zresztą musi być przymus tymczasem mrówki nie podlegają żadnemu zgoła przymusowi",
-  ],
-
-  path_template_list: [
-    "audios/mls/mls_english_10611_10308_000071_{}.wav",
-    "audios/mls/mls_english_12278_12446_000057_{}.wav",
-    "audios/multi/0006_G2A3E7_KYH_001279_wav_c_2_{}.wav",
-    "audios/multi/0001_G1A3E6S0C0_PSB_000046_wav_c_0_{}.wav",
-    "audios/mls/mls_german_2252_1599_000090_{}.wav",
-    "audios/mls/mls_german_1844_931_000001_{}.wav",
-    "audios/mls/mls_dutch_3034_2211_000142_{}.wav",
-    "audios/mls/mls_dutch_3798_4626_000595_{}.wav",
-    "audios/mls/mls_french_296_1028_000040_{}.wav",
-    "audios/mls/mls_french_10179_11051_000033_{}.wav",
-    "audios/mls/mls_spanish_3471_1378_000155_{}.wav",
-    "audios/mls/mls_spanish_8585_9503_000072_{}.wav",
-    "audios/mls/mls_italian_8582_7877_000066_{}.wav",
-    "audios/mls/mls_italian_280_529_000089_{}.wav",
-    "audios/mls/mls_portuguese_13063_13511_000009_{}.wav",
-    "audios/mls/mls_portuguese_13063_13511_000045_{}.wav",
-    "audios/mls/mls_polish_9098_8338_000009_{}.wav",
-    "audios/mls/mls_polish_8758_8338_000023_{}.wav",
-  ],
-  lang_list: [
-    "English",
-    "English",
-    "Korean",
-    "Korean",
-    "German",
-    "German",
-    "Dutch",
-    "Dutch",
-    "French",
-    "French",
-    "Spanish",
-    "Spanish",
-    "Italian",
-    "Italian",
-    "Portuguese",
-    "Portuguese",
-    "Polish",
-    "Polish",
-  ],
-  prompt_text_list: new Array(18),
-  prompt_time: Array(18).fill(3),
-};
-
 const celebData = {
   text_list: [
     "We must unite and harness our strengths, for the fate of our world hangs in the balance.",
@@ -541,9 +443,7 @@ const animeData = {
 divBuilderCeleb("#celeb-box", celebData);
 //divBuilder("#librispeech-box", librispeechData);
 //divBuilder("#vctk-box", vctkData);
-//divBuilderMLS("#mls-box", mlsData);
 let librispeechFlag = false;
-let mlsFlag = false;
 let animeFlag = false;
 
 document
@@ -554,14 +454,6 @@ document
     if (!librispeechFlag) {
       librispeechFlag = true;
       divBuilderLibriSpeech("#librispeech-box", librispeechData);
-    }
-  });
-document
-  .querySelector('button[data-bs-toggle="tab"][data-bs-target="#mls-box"]')
-  .addEventListener("shown.bs.tab", function (event) {
-    if (!mlsFlag) {
-      mlsFlag = true;
-      divBuilderMLS("#mls-box", mlsData);
     }
   });
 document
