@@ -36,7 +36,7 @@
         <article itemscope="" itemtype="https://schema.org/BlogPosting">
           <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
             <div class="text-center">
-              <h1>Efficient Generative Modeling<br>with Residual Vector Quantization-Based Tokens</h1>
+              <h1>Efficient Generative Modeling with <br>Residual Vector Quantization-Based Tokens</h1>
               <!-- <p class="lead fw-bold">
                 |<span
                   style="padding: .375rem .75rem; font-size: 1rem;">OpenReview</span>|
@@ -47,22 +47,19 @@
             </div>
             <p>
               <b>Abstract.</b>
-              We explore the use of Residual Vector Quantization (RVQ) for high-fidelity generation
-              in vector-quantized generative models. This quantization technique maintains higher
-              data fidelity by employing more in-depth tokens. However, increasing the token number
-              in generative models leads to slower inference speeds. To this end, we introduce
-              ResGen, an efficient RVQ-based discrete diffusion model that generates high-fidelity
-              samples without compromising sampling speed. Our key idea is a direct prediction of vector
-              embedding of collective tokens rather than individual ones. Moreover, we demonstrate that
-              our proposed token masking and multi-token prediction method can be formulated within a
-              principled probabilistic framework using a discrete diffusion process and variational inference.
-              We validate the efficacy and generalizability of the proposed method on two challenging tasks
-              across different modalities: conditional <i>image generation</i> on ImageNet 256×256 and
-              zero-shot <i>text-to-speech synthesis.</i> Experimental results demonstrate that ResGen
-              outperforms autoregressive counterparts in both tasks, delivering superior performance without
-              compromising sampling speed. Furthermore, as we scale the depth of RVQ, our generative models
-              exhibit enhanced generation fidelity or faster sampling speeds compared to similarly sized
-              baseline models. The project page can be found at
+              We introduce ResGen, an efficient Residual Vector Quantization (RVQ)-based generative
+              model for high-fidelity generation with fast sampling. RVQ improves data fidelity by increasing
+              the number of quantization steps, referred to as depth, but deeper quantization typically increases
+              inference steps in generative models. To address this, ResGen directly predicts the vector
+              embedding of collective tokens rather than individual ones, ensuring that inference steps remain
+              independent of RVQ depth. Additionally, we formulate token masking and multi-token prediction
+              within a probabilistic framework using discrete diffusion and variational inference. We validate
+              the efficacy and generalizability of the proposed method on two challenging tasks across different
+              modalities: conditional <i>image generation</i> on ImageNet 256×256 and zero-shot <i>text-to-speech synthesis.</i>.
+              Experimental results demonstrate that ResGen outperforms autoregressive counterparts
+              in both tasks, delivering superior performance without compromising sampling speed. Furthermore,
+              as we scale the depth of RVQ, our generative models exhibit enhanced generation fidelity or faster
+              sampling speeds compared to similarly sized baseline models. The project page can be found at
               <a href="https://resgen-ai.github.io/">https://resgen-ai.github.io/</a>.
             </p>
           </div>
